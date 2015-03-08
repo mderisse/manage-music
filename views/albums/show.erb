@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%=album.name%></title>
+</head>
+<body>
+	<a href="/artist/<%=album.artist_id%>">Back</a>
+	<h1> <%=album.name%> </h1>
+	<h3> List of songs: </h3>
+	<% album.songs.each do |song| %>
+		<li><%=song.title%></li>
+	<% end %>
+	
+	<h3> Add a song </h3>
+	<form method="POST" action="/song">
+		<input type="hidden" name="album_id" value="<%=album.id%>">
+		<input type="text" name="title">
+	</form>
+</body>
+</html>

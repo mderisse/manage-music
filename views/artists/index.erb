@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Artists</title>
+</head>
+<body>
+	<a href="/">Back</a>
+	<h1>Welcome to the Artists Page </h1>
+	<h3> List of Artists: </h3>
+	<% artists.each do |artist| %>
+		<li><a href="/artist/<%=artist.id%>"><%=artist.name%> </a></li>
+	<% end %>
+	
+	<h3> Add a band </h3>
+	<form method="POST" action="/artist">
+		<input type="text" name="name">
+	</form>
+</body>
+</html>
